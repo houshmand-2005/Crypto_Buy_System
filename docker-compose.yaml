@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web:
+    restart: always
+    build: .
+    command: >
+      sh -c "cd src &&
+             python manage.py makemigrations --noinput &&
+             python manage.py migrate --noinput &&
+             python manage.py test &&
+             python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+  db:
+    image: postgres:15.3-alpine3.18
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+volumes:
+  postgres_data:
