@@ -41,7 +41,7 @@ At first you need docker and docker compose
 # clone the project
 git clone https://github.com/houshmand-2005/Crypto_Buy_System
 # go to the folder
-cd buy-cryptocurrency
+cd Crypto_Buy_System
 # run project with docker
 docker-compose up -d
 ```
@@ -54,7 +54,7 @@ If you want to run the tests, you only need to do the following steps
 # clone the project
 git clone https://github.com/houshmand-2005/Crypto_Buy_System
 # go to the folder
-cd buy-cryptocurrency
+cd Crypto_Buy_System
 # install the libraries
 pip install -r requirements.txt
 # now run the tests
